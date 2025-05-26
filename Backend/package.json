@@ -1,0 +1,25 @@
+{
+  "name": "uberclone",
+  "version": "1.0.0",
+  "description": "Created By Umar",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UmarAbdulah/UberClonehttps:.git"
+  },
+  "author": "Umar Abdullah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UmarAbdulah/UberClonehttps:/issues"
+  },
+  "homepage": "https://github.com/UmarAbdulah/UberClonehttps:#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
