@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import uberlogo from "../assets/uberlogo.png";
 import bgImage from "../assets/bg.jpg";
 
-const Home = () => {
+const Start = () => {
   return (
     <div>
       <div className="h-screen w-full flex items-end justify-between flex-col bg-[image:var(--bg-url)] bg-center bg-cover bg-contain backgroundSize: '50%';">
@@ -27,4 +27,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Start;
