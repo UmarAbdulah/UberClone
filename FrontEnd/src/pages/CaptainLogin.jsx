@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import uberlogo from "../assets/uberlogo.png";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { CaptainContext } from "../context/captain-context";
 import axios from "axios";
+import { CaptainContext } from "../context/captain-context";
 
 const CaptainLogin = () => {
-  const { updateCaptain } = useContext(CaptainContext);
+  const { setCaptain } = useContext(CaptainContext);
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
@@ -23,7 +23,7 @@ const CaptainLogin = () => {
     );
     if (response.status === 200) {
       const data = response.data;
-      updateCaptain(data.captain);
+      setCaptain(data.captain);
       localStorage.setItem("token", data.token);
       navigate("/captain-home");
     } else {

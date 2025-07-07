@@ -2,6 +2,12 @@ import React from "react";
 import car from "../assets/car.png";
 
 const ConfirmedRide = (props) => {
+  let price = 0;
+  if (props.vechicleType === "car") {
+    price = props.fare.fareCar;
+  } else {
+    price = props.fare.fareMotorcycle;
+  }
   return (
     <div>
       <h5
@@ -20,25 +26,19 @@ const ConfirmedRide = (props) => {
           <div className="flex items-center gap-5 p-3 border-b-2 border-gray-200">
             <i className="text-lg ri-map-pin-5-fill"></i>
             <div>
-              <h3 className="text-lg font-medium">562/11-A</h3>
-              <p className="text-sm text-gray-600">
-                Sector 11, Isalamabad, Pakistan
-              </p>
+              <h3 className="text-lg font-medium">{props.pickup}</h3>
             </div>
           </div>
           <div className="flex items-center gap-5 p-3 border-b-2  border-gray-200 ">
             <i className="text-lg ri-map-pin-5-fill"></i>
             <div>
-              <h3 className="text-lg font-medium">562/11-A</h3>
-              <p className="text-sm text-gray-600">
-                Sector 11, Isalamabad, Pakistan
-              </p>
+              <p className="text-lg font-medium">{props.destination}</p>
             </div>
           </div>
           <div className="flex items-center gap-5 p-3">
             <i className="ri-currency-fill"></i>
             <div>
-              <h3 className="text-lg font-medium">Rs190.30</h3>
+              <h3 className="text-lg font-medium">Rs{price}</h3>
               <p className="text-sm text-gray-600">Cash Cash</p>
             </div>
           </div>
@@ -47,6 +47,7 @@ const ConfirmedRide = (props) => {
           onClick={() => {
             props.setConfirmedRidePanel(false);
             props.setVechicelFound(true);
+            props.createRide();
           }}
           className="mt-5 w-full bg-green-600 text-white font-semibold p-2 rounded-lg"
         >

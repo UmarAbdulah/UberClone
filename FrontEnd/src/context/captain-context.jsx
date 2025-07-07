@@ -1,16 +1,12 @@
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useState } from "react";
 
 export const CaptainContext = createContext();
 
 export const CaptainContextProvider = ({ children }) => {
-  const [captain, setCaptain] = useState(null);
-
-  const updateCaptain = (newCaptain) => {
-    setCaptain(newCaptain);
-  };
+  const [captain, setCaptain] = useState({});
 
   return (
-    <CaptainContext.Provider value={{ captain, updateCaptain }}>
+    <CaptainContext.Provider value={{ captain, setCaptain }}>
       {children}
     </CaptainContext.Provider>
   );
